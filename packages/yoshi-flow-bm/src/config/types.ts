@@ -8,6 +8,7 @@ export interface ModuleConfig {
   routeNamespace: string;
   topology: Record<string, { artifactId: string }>;
   moduleBundleName: string;
+  emitLegacyWrappers: boolean;
 }
 
 export type InitialPageConfig = Partial<PageConfig>;

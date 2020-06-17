@@ -19,6 +19,7 @@ export const validModuleConfig: InitialModuleConfig = {
     },
     { barUrl: { artifactId: 'bar' } },
   ),
+  emitLegacyWrappers: true,
 };
 
 export const validPageConfig: InitialPageConfig = {
