@@ -212,7 +212,7 @@ export const getProjectArtifactVersion = () => {
 export const getProjectCDNBasePath = (useUnversionedBaseUrl: boolean) => {
   const artifactName = getProjectArtifactId();
 
-  let artifactPath = '';
+  let artifactPath;
 
   if (useUnversionedBaseUrl) {
     // Not to be confused with Yoshi's `dist` directory.
@@ -226,7 +226,7 @@ export const getProjectCDNBasePath = (useUnversionedBaseUrl: boolean) => {
     // Webpack's `publicUrl` to use the first option.
     artifactPath = 'dist';
   } else {
-    artifactPath = getProjectArtifactVersion();
+    artifactPath = getProjectArtifactVersion() || '';
   }
 
   return `${staticsDomain}/${artifactName}/${artifactPath}/`;
